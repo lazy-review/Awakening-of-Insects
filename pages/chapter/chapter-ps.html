@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="惊蛰，春季高考，信息技术，网络技术，软件技术，数字媒体">
+    <meta name="description" content="惊蛰，一个春考信息技术小站">
+    <title>章节内容 | 惊蛰</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        body {
+            background-color: #F5F9EE;
+        }
+
+        /* 惊蛰主题配色 */
+        :root {
+            --spring-green: #A8DF65;
+            --thunder-blue: #5B8CFF;
+            --earth-brown: #D2B48C;
+            --insect-yellow: #FFD700;
+            --dark-text: #3A3A3A;
+            --knowledge-purple: #AC92EC;
+        }
+
+        /* 导航栏 */
+        .page-header {
+            background-image: linear-gradient(to right, rgba(168, 223, 101, 0.9), rgba(91, 140, 255, 0.9));
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFF;
+            text-shadow: 0 2px 4px #00000088;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header .logo::before {
+            content: "🌱";
+            margin-right: 10px;
+            font-size: 1.6rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* 主要内容容器 */
+        .main-container {
+            display: flex;
+            max-width: 1500px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            gap: 2rem;
+        }
+
+        /* 左侧章节导航 */
+        .chapter-nav {
+            width: 280px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .chapter-nav h2 {
+            font-size: 1.5rem;
+            color: var(--thunder-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--spring-green);
+        }
+        .chapter-nav .chapter-item a {
+            font-size: 1rem;
+        }
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chapter-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-link {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: var(--dark-text);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .chapter-link:hover {
+            background-color: rgba(168, 223, 101, 0.1);
+            color: var(--thunder-blue);
+        }
+
+        .chapter-link.active {
+            background: linear-gradient(to right, rgba(168, 223, 101, 0.2), rgba(91, 140, 255, 0.2));
+            color: var(--thunder-blue);
+            font-weight: bold;
+        }
+
+        .chapter-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--spring-green), var(--thunder-blue));
+            border-radius: 2px;
+        }
+
+        /* 右侧内容区域 */
+        .content-area {
+            flex: 1;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .content-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .content-header h1 {
+            font-size: 2rem;
+            color: var(--knowledge-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--spring-green), var(--thunder-blue));
+            margin: 1rem auto;
+        }
+
+        /* 内容样式 */
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--thunder-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed #DDD;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--spring-green);
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .content-section ol,
+        .content-section ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .content-section li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-block {
+            font-size: 1rem;
+            background-color: #F5F9EE;
+            border-radius: 5px;
+            padding: 1rem;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--insect-yellow);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 5px 5px 0;
+            font-size: 1rem;
+        }
+        .note strong {
+            font-weight: bold;
+        }
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--earth-brown);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            color: #FFF;
+            background: var(--spring-green);
+            transform: translateY(-2px);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+            
+            .chapter-nav {
+                width: 100%;
+                position: static;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="page-header">
+        <div class="logo">微雨众卉新，一雷惊蛰始</div>
+    </header>
+    
+    <!-- 主要内容 -->
+    <div class="main-container">
+        <!-- 左侧章节导航 -->
+        <aside class="chapter-nav">
+            <h2>网页设计与制作</h2>
+            <ul class="chapter-list">
+                <li class="chapter-item"><a href="#" class="chapter-link active">站点管理与页面属性</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">CSS样式管理</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">多媒体元素插入</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">超链接与路径</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">行为与交互效果</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">模板应用</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">表单设计与验证</a></li>
+                <li class="chapter-item"><a href="#" class="chapter-link">响应式设计基础</a></li>
+            </ul>
+        </aside>
+        
+        <!-- 右侧内容区域 -->
+        <main class="content-area">
+            <div class="content-header">
+                <h1>站点管理与页面属性</h1>
+                <p>掌握Dreamweaver中站点创建与管理的基本操作</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>本地站点创建</h2>
+                
+                <h3>创建步骤</h3>
+                <ol>
+                    <li>运行Dreamweaver，选择菜单"站点→新建站点"命令，弹出"站点设置对象"对话框</li>
+                    <li>选择"站点"选项，在"站点名称"文本框中输入站点名称</li>
+                    <li>单击"本地站点文件夹"后面的"浏览文件夹"按钮，在打开的"选择根文件夹"对话框中选择文件夹</li>
+                    <li>选择"高级设置"中的"本地信息选项"，单击"默认图像文件夹"后的"浏览"按钮，选择图像文件夹</li>
+                    <li>在"站点设置对象"对话框中单击"保存"按钮</li>
+                </ol>
+                
+                <div class="note">
+                    <strong>注意：</strong>站点名称应使用英文或数字，避免使用中文和特殊字符，以确保兼容性。
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>站点导出与导入</h2>
+                
+                <h3>导出站点</h3>
+                <ol>
+                    <li>选择菜单"站点→管理站点"命令，打开"管理站点"对话框</li>
+                    <li>选择要导出的站点名称，单击"导出站点"按钮</li>
+                    <li>在弹出的"导出站点"对话框中，选择保存位置并输入文件名</li>
+                    <li>单击"保存"按钮完成导出</li>
+                </ol>
+                
+                <h3>导入站点</h3>
+                <ol>
+                    <li>选择菜单"站点→管理站点"命令，打开"管理站点"对话框</li>
+                    <li>单击"导入站点"按钮，弹出"导入站点"对话框</li>
+                    <li>选择站点定义文件(.ste文件)</li>
+                    <li>单击"打开"，然后在"管理站点"对话框中单击"完成"按钮</li>
+                </ol>
+            </div>
+            
+            <div class="content-section">
+                <h2>页面属性设置</h2>
+                
+                <p>页面属性包括外观、链接、标题、标题/编码、跟踪图像等分类设置。</p>
+                
+                <h3>设置步骤</h3>
+                <ol>
+                    <li>在属性面板单击"页面属性"按钮，打开"页面属性"对话框</li>
+                    <li>在"分类"列表中选择要设置的类别</li>
+                    <li>设置相关参数：
+                        <ul>
+                            <li><strong>链接颜色</strong>：设置超链接默认颜色</li>
+                            <li><strong>已访问链接</strong>：设置访问过的链接颜色</li>
+                            <li><strong>变换图像链接</strong>：设置鼠标悬停时的链接颜色</li>
+                            <li><strong>活动链接</strong>：设置活动状态的链接颜色</li>
+                        </ul>
+                    </li>
+                    <li>将"下划线样式"设置为需要的样式</li>
+                    <li>单击"确定"按钮应用设置</li>
+                </ol>
+                
+                <div class="code-block">
+                    /* 页面属性设置的CSS示例 */
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        font-family: Arial, sans-serif;
+                        color: #333;
+                    }
+                    
+                    a:link {
+                        color: #0066CC;
+                        text-decoration: underline;
+                    }
+                    
+                    a:visited {
+                        color: #663399;
+                    }
+                    
+                    a:hover {
+                        color: #FF6600;
+                        text-decoration: none;
+                    }
+                </div>
+            </div>
+            
+            <!-- 返回按钮 -->
+            <div style="text-align: center;">
+                <a href="#" class="back-btn">返回章节列表</a>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- IE浏览器兼容性配置 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页关键字 -->
+    <meta name="keywords" content="惊蛰，春季高考，信息技术，网络技术，软件技术，数字媒体">
+    <!-- 网页描述信息 -->
+    <meta name="description" content="惊蛰，一个春考信息技术小站">
+    <title>惊蛰</title>
+    <!-- 引入页签图标 -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 响应式样式 -->
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <!-- 背景图 -->
+    <div class="main-bg"></div>
+    <!-- 导航栏 -->
+    <header class="page-header">
+        <div class="logo">微雨众卉新，一雷惊蛰始</div>
+        <button class="menu-toggle" aria-label="菜单">☰</button>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">春雷始鸣</a></li>
+                <li><a href="#">万物复苏</a></li>
+                <li><a href="#">蛰虫破土</a></li>
+                <li><a href="#">春雨润考</a></li>
+                <li><a href="#">耕读计划</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主导航区 -->
+    <div class="main-container">
+        <div class="main-content">
+            <h1>惊蛰至 春考启</h1>
+            <p>雷动风行惊蛰户，天开地辟转鸿钧。<br>在这万物复苏的时节，让你的知识如春笋般破土而出！</p>
+            <button class="btn btn-primary">🐝 开始耕耘</button>
+            <button class="btn">📚 查看攻略</button>
+
+            <div class="nav-card">
+                <h3>📅 春考倒计时</h3>
+                <div id="countdown">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span class="countdown-label">天</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span class="countdown-label">时</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span class="countdown-label">分</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span class="countdown-label">秒</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 轮播图 -->
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide">
+                    <a href="#"><img src="./images/lunbo1.jpg" alt="春雷唤醒"></a>
+                    <div class="slide-content">
+                        <h3>春雷唤醒计划</h3>
+                        <p>每日清晨6点准时推送考点精讲</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#"><img src="./images/lunbo2.jpg" alt="农耕数学"></a>
+                    <div class="slide-content">
+                        <h3>农耕中的数学</h3>
+                        <p>二十四节气与数列应用专题</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#"><img src="./images/lunbo3.jpg" alt="诗词解析"></a>
+                    <div class="slide-content">
+                        <h3>惊蛰诗词大会</h3>
+                        <p>10首必考古诗词精讲</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav" id="carousel-nav">
+                <!-- JS动态生成导航点 -->
+            </div>
+        </div>
+    </div>
+    <!-- 主内容区 -->
+    <section class="subjects">
+        <div class="section-title">
+            <h2>春考课程体系</h2>
+            <p>规律设计备考方案</p>
+        </div>
+        <div class="card-grid">
+            <!-- 卡片1 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>网络技术课程</h3>
+                    <p>网络技术提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    < href="./pages/chapter/chapter-wl.html"><button class="btn" style="background: var(--spring-green);color: white;">🌸进入学习</button></a>
+                </div>
+            </div>
+
+            <!-- 卡片2 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>网页设计与制作课程</h3>
+                    <p>网页设计与制作提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    <a href="./pages/chapter/chapter-dw.html"><button class="btn" style="background: var(--thunder-blue);color: white;">🐦进入学习</button></a>
+                </div>
+            </div>
+
+            <!-- 卡片3 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>图形图像处理课程</h3>
+                    <p>图形图像处理提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    <a href="./pages/chapter/chapter-ps.html"><button class="btn"
+                        style="background: var(--insect-yellow);color: white;">🦅进入学习</button></a>
+                </div>
+            </div>
+
+            <!-- 卡片4 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>网络设备安装与调试课程</h3>
+                    <p>网络设备安装与调试提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    <a href="./pages/chapter/chapter-ws.html"><button class="btn"
+                        style="background: var(--spring-green);color: white;">🦅进入学习</button></a>
+                </div>
+            </div>
+
+            <!-- 卡片5 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>计算机组装与维护课程</h3>
+                    <p>计算机组装与维护提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    <a href="./pages/chapter/chapter-zw.html"><button class="btn"
+                        style="background: var(--thunder-blue);color: white;">🦅进入学习</button></a>
+                </div>
+            </div>
+
+            <!-- 卡片6 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <h3>网络安全课程</h3>
+                    <p>网络安全提升计划</p>
+                </div>
+                <div class="card-body">
+                    <p>培养灵活多变的解题思路</p>
+                    <a href="./pages/chapter/chapter-wa.html"><button class="btn"
+                        style="background: var(--insect-yellow);color: white;">🦅进入学习</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚部分 -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">惊蛰启航</h3>
+                <p class="footer-description">春雷唤醒知识，惊蛰助力春考</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">🌩️</a>
+                    <a href="#" class="social-icon">🌱</a>
+                    <a href="#" class="social-icon">🐝</a>
+                    <a href="#" class="social-icon">📚</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">节气导航</h4>
+                <ul class="footer-links">
+                    <li><a href="#">立春备考</a></li>
+                    <li><a href="#">雨水复习</a></li>
+                    <li><a href="#">惊蛰冲刺</a></li>
+                    <li><a href="#">春分模拟</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">学科资源</h4>
+                <ul class="footer-links">
+                    <li><a href="#">语文古诗词</a></li>
+                    <li><a href="#">数学公式集</a></li>
+                    <li><a href="#">英语高频词</a></li>
+                    <li><a href="#">专业综合</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">联系我们</h4>
+                <ul class="footer-contact">
+                    <li>📧 761828724@qq.com</li>
+                    <li>📞 400-123-4567</li>
+                    <li>📍 山东省临沂市</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 惊蛰春考备考站 | 设计灵感来自二十四节气</p>
+        </div>
+    </footer>
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <img src="./images/back-to-top.png.png" alt="返回顶部">
+    </a>
+</body>
+<script src="./js/index.js"></script>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- IE浏览器兼容性配置 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页关键字 -->
+    <meta name="keywords" content="惊蛰，春季高考，信息技术，网络技术，软件技术，数字媒体">
+    <!-- 网页描述信息 -->
+    <meta name="description" content="惊蛰，一个春考信息技术小站">
+    <title>首页 | 惊蛰</title>
+    <!-- 引入页签图标 -->
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        body {
+            background-color: #F5F9EE;
+        }
+
+        /* 惊蛰主题配色 */
+        :root {
+            --spring-green: #A8DF65;
+            --thunder-blue: #5B8CFF;
+            --earth-brown: #D2B48C;
+            --insect-yellow: #FFD700;
+            --dark-text: #3A3A3A;
+            --knowledge-purple: #AC92EC;
+        }
+
+        /* #region导航栏start */
+        .page-header {
+            background-image: linear-gradient(to right, rgba(168, 223, 101, 0.9), rgba(91, 140, 255, 0.9));
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFF;
+            text-shadow: 0 2px 4px #00000088;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header .logo::before {
+            content: "🌱";
+            margin-right: 10px;
+            font-size: 1.6rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* #endregion导航栏end */
+
+        /* #region主要内容start */
+        /* 内容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 页面标题 */
+        .container .page-title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: linear-gradient(to right, var(--spring-green), var(--thunder-blue));
+        }
+
+        /* 学习板块 */
+        .learning-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+        }
+
+        .learning-card {
+            background-color: #FFF;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .learning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .learning-card h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--thunder-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .learning-card h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, var(--spring-green), var(--thunder-blue));
+        }
+
+        .learning-card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .subject-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .subject-list a {
+            font-size: 1rem;
+        }
+
+        .subject-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            background-color: #F5F9EE;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: all 0.3s;
+            border-left: 4px solid var(--spring-green);
+        }
+
+        .subject-item:hover {
+            background: linear-gradient(to right, rgba(168, 223, 101, 0.1), rgba(91, 140, 255, 0.1));
+            border-left: 4px solid var(--thunder-blue);
+            color: var(--thunder-blue);
+        }
+
+        /* 特色区域 */
+        .feature-section {
+            background-color: #FFF;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .feature-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--knowledge-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-section p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--earth-brown);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            color: #FFF;
+            background: var(--spring-green);
+            transform: translateY(-2px);
+        }
+
+        /* #endregion主要内容end */
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="page-header">
+        <div class="logo">微雨众卉新，一雷惊蛰始</div>
+    </header>
+    <!-- 主要内容 -->
+    <div class="container">
+        <div class="page-title">
+            <h1>惊蛰学习平台</h1>
+            <p>系统学习信息技术，构建完整知识体系</p>
+        </div>
+
+        <!-- 学习板块 -->
+        <div class="learning-sections">
+            <!-- 技能板块 -->
+            <div class="learning-card">
+                <h2>技能实践</h2>
+                <p>通过实际操作掌握信息技术核心技能</p>
+                <div class="subject-list">
+                    <a href="knowledge/knowledge-dw.html" class="subject-item">网页设计与制作</a>
+                    <a href="knowledge/knowledge-ps.html" class="subject-item">网络服务器配置</a>
+                    <a href="knowledge/knowledge-ws.html" class="subject-item">图形图像处理</a>
+                    <a href="knowledge/knowledge-zw.html" class="subject-item">二维动画制作</a>
+                    <a href="knowledge/knowledge-zw.html" class="subject-item">C语言程序设计</a>
+                    <a href="knowledge/knowledge-zw.html" class="subject-item">网络设备安装与调试</a>
+                </div>
+            </div>
+
+            <!-- 理论板块 -->
+            <div class="learning-card">
+                <h2>理论学习</h2>
+                <p>深入理解信息技术基础理论与概念</p>
+                <div class="subject-list">
+                    <a href="knowledge/knowledge-wl.html" class="subject-item">网络技术知识</a>
+                    <a href="knowledge/knowledge-wa.html" class="subject-item">图形图像处理知识</a>
+                    <a href="#" class="subject-item">计算机组装与维修知识</a>
+                    <a href="#" class="subject-item">网络安全技术</a>
+                    <a href="#" class="subject-item">网络设备安装与调试</a>
+                    <a href="#" class="subject-item">网页制作</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 特色区域 -->
+        <div class="feature-section">
+            <h2>为什么选择惊蛰学习平台？</h2>
+            <p>我们提供系统化的信息技术学习资源，结合理论知识与实践技能，帮助学生全面掌握春季高考信息技术相关考点。无论是网页设计、网络配置还是图像处理，我们都有详细的教程和知识点梳理。</p>
+            <p>惊蛰学习平台致力于打造一个高效、实用的学习环境，让每一位学生都能在这里找到适合自己的学习路径。</p>
+        </div>
+
+        <!-- 返回按钮 -->
+        <div style="text-align: center;">
+            <a href="#" class="back-btn">返回顶部</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+/* 响应式设计 */
+/* 响应式设计 - 媒体查询 */
+@media (max-width: 1200px) {
+    /* 大屏幕平板和小型笔记本 */
+    .main-container {
+        flex-direction: column;
+        padding: 2rem 5%;
+    }
+    
+    .main-content {
+        flex: 1 1 100% !important;
+        padding-right: 0 !important;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .carousel-container {
+        flex: 1 1 100% !important;
+        height: 400px;
+        transform: none;
+    }
+    
+    .main-container .main-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .main-container .main-content h1::after {
+        display: none;
+    }
+    
+    .main-container .main-content .btn {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-card {
+        margin: 2rem auto 0 !important;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    /* 平板设备 */
+    .page-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .subjects .card-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* 小型平板 */
+    .main-container .main-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .main-container .main-content p {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-container {
+        height: 350px;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .subjects .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .subjects .section-title h2::before,
+    .subjects .section-title h2::after {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 手机设备 */
+    .main-container .main-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-container .main-content p {
+        font-size: 1rem;
+    }
+    
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .nav-card {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .subjects .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-header .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .page-header .nav-list li a {
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .subjects {
+        padding: 2rem 1rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-subtitle::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* 超小屏幕手机 */
+    .main-container .main-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-container {
+        height: 250px;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    
+    .main-container .main-content .btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+    }
+    
+    .nav-card h3 {
+        font-size: 1rem;
+    }
+    
+    .nav-card p {
+        font-size: 0.9rem;
+    }
+}
+/* 移动端菜单按钮 */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+}
+
+/* 响应式导航 */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .page-header nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .page-header nav.active {
+        max-height: 500px;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        padding: 1rem 0 !important;
+    }
+}
+
+/* 确保图片响应式 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 视频容器响应式 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 响应式字体 */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 12px;
+    }
+}
+/* 响应式表格 */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
+
+table {
+    min-width: 600px; /* 确保表格有最小宽度 */
+}
+/* 响应式表单 */
+input, textarea, select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -0.5rem;
+    }
+    
+    .form-control {
+        flex: 1;
+        margin: 0 0.5rem;
+        min-width: 200px;
+    }
+}
+/* 响应式实用类 */
+.hidden-mobile {
+    display: block;
+}
+
+.visible-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+    
+    .visible-mobile {
+        display: block !important;
+    }
+}
+
+/* 响应式间距 */
+.padding-responsive {
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .padding-responsive {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .padding-responsive {
+        padding: 1rem;
+    }
+}
+@media (max-width: 992px) {
+    .carousel-nav {
+        bottom: 20px;
+    }
+    
+    .nav-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-nav {
+        bottom: 10px;
+    }
+    
+    .nav-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .subject-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .subject-card:hover {
+        transform: none;
+    }
+}
+/* 返回顶部按钮 */
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .back-to-top img {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- IE浏览器兼容性配置 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页关键字 -->
+    <meta name="keywords" content="惊蛰，春季高考，信息技术，网络技术，软件技术，数字媒体">
+    <!-- 网页描述信息 -->
+    <meta name="description" content="惊蛰，一个春考信息技术小站">
+    <title>知识点梳理 | 惊蛰</title>
+    <!-- 引入页签图标 -->
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        body {
+            background-color: #F5F9EE;
+        }
+
+        /* 惊蛰主题配色 */
+        :root {
+            --spring-green: #A8DF65;
+            --thunder-blue: #5B8CFF;
+            --earth-brown: #D2B48C;
+            --insect-yellow: #FFD700;
+            --dark-text: #3A3A3A;
+            --knowledge-purple: #AC92EC;
+        }
+
+        /* #region导航栏start */
+        .page-header {
+            background-image: linear-gradient(to right, rgba(168, 223, 101, 0.9), rgba(91, 140, 255, 0.9));
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFF;
+            text-shadow: 0 2px 4px #00000088;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header .logo::before {
+            content: "🌱";
+            margin-right: 10px;
+            font-size: 1.6rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* #endregion导航栏end */
+
+        /* #region主要内容start */
+        /* 内容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 页面标题 */
+        .container .page-title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: linear-gradient(to right, var(--spring-green), var(--thunder-blue));
+        }
+
+        /* 学科导航 */
+        .subject-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .subject-nav .subject-tab {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #FFF;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .subject-nav .subject-tab:hover,
+        .subject-nav .subject-tab.active,
+        .subject-nav .subject-tab:hover a,
+        .subject-nav .subject-tab.active a {
+            background: linear-gradient(to right, var(--knowledge-purple), var(--thunder-blue));
+            color: #FFF;
+            border-color: transparent;
+        }
+
+        /* 知识点树 */
+        .knowledge-tree {
+            background-color: #FFF;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .knowledge-tree h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--knowledge-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .knowledge-tree .tree-container-main {
+            column-count: 3;
+            column-gap: 30px;
+            column-rule: 1px dashed red;
+        }
+
+        .knowledge-tree .tree-container-main h4 {
+            column-span: all;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 0px;
+        }
+
+        /* .tree-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        } */
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--earth-brown);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #FFF;
+            background: var(--spring-green);
+        }
+
+        /* #endregion主要内容end */
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="page-header">
+        <div class="logo">微雨众卉新，一雷惊蛰始</div>
+    </header>
+    <!-- 主要内容 -->
+    <div class="container">
+        <div class="page-title">
+            <h1>学科知识点梳理</h1>
+            <p>系统掌握考点，构建知识体系</p>
+        </div>
+        <!-- 学科导航 -->
+        <div class="subject-nav">
+            <div class="subject-tab"><a href="../knowledge/knowledge-wl.html">网络技术</a></div>
+            <div class="subject-tab active"><a href="#">网页设计与制作</a></div>
+            <div class="subject-tab"><a href="../knowledge/knowledge-ps.html">图像图像处理</a></div>
+            <div class="subject-tab"><a href="../knowledge/knowledge-ws.html">网络设备安装与调试</a></div>
+            <div class="subject-tab"><a href="../knowledge/knowledge-zw.html">计算机组装与维护</a></div>
+            <div class="subject-tab"><a href="../knowledge/knowledge-wa.html">网络安全</a></div>
+        </div>
+        <!-- 知识点树 -->
+        <div class="knowledge-tree">
+            <h2>网页设计与制作知识点体系</h2>
+            <div class="tree-container">
+                <div class="tree-container-main">
+                    <h4>简答、案例分析、综合应用题答题步骤</h4>
+                    <p>本地站点</p>
+                    <p>①运行Dreamweaver，选择菜单&ldquo;站点→新建站点&rdquo;命令，弹出&ldquo;站点设置对象&rdquo;对话框。</p>
+                    <p>②选择&ldquo;站点&rdquo;选项，在&ldquo;站点名称&rdquo;文本框中输入（站点名称）。单击&ldquo;本地站点文件夹&rdquo;后面的&ldquo;浏览文件夹&rdquo;按钮，在打开的&ldquo;选择根文件夹&rdquo;对话框中选择（文件夹名称）。
+                    </p>
+                    <p>③选择&ldquo;高级设置&rdquo;中的&ldquo;本地信息选项&rdquo;，单击&ldquo;默认图像文件夹&rdquo;后的&ldquo;浏览&rdquo;按钮，在打开的&ldquo;选择图像文件夹&rdquo;中选择（文件夹），单击&ldquo;选择文件夹&rdquo;按钮。
+                    </p>
+                    <p>&#9315;在&ldquo;站点设置对象&rdquo;对话框中单击&ldquo;保存&rdquo;按钮。</p>
+                    <p>导出 导入站点</p>
+                    <p>①选择菜单&ldquo;站点→管理站点&rdquo;命令，打开&ldquo;管理站点&rdquo;对话框，选择（站点的名称），单击导出站点（）按钮。        </p>
+                    <p>②在弹出的&ldquo;导出站点&rdquo;对话框中，选择站点定义文件的保存位置，在文件名后的文本框中输入（文件名称），单击&ldquo;保存&rdquo;按钮。</p>
+                    <p>①选择菜单&ldquo;站点→管理站点&rdquo;命令，打开&ldquo;管理站点&rdquo;对话框，单击导入站点按钮，弹出&ldquo;导入站点&rdquo;对话框。</p>
+                    <p>②选择（文件名称.ste），单击&ldquo;打开&rdquo;，选择&ldquo;管理站点&rdquo;对话框中&ldquo;完成&rdquo;按钮。</p>
+                    <p>页面属性</p>
+                    <p>①在属性面板单击&ldquo;页面属性&rdquo;按钮，打开&ldquo;页面属性&rdquo;对话框。</p>
+                    <p>②在&ldquo;分类&rdquo;列表中选择（外观、链接、标题、标题/编码、跟踪图像）。</p>
+                    <p>③在（链接颜色、已访问链接、变换图像链接、活动链接）后的文本框中输入（颜色代码），将&ldquo;下划线样式&rdquo;设置为（始终有下划线、始终无下划线、仅在变换图像时显示下划线、变换图像时隐藏下划线）。
+                    </p>
+                    <p>&#9315;单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>管理字体</p>
+                    <p>①在文本属性面板中单击&ldquo;CSS&rdquo;按钮，切换到文本的CSS设置界面。</p>
+                    <p>②单击文本属性面板中的&ldquo;字体&rdquo;列表按钮，选择&ldquo;管理字体&rdquo;列表命令，弹出&ldquo;管理字体&rdquo;对话框。</p>
+                    <p>③在&ldquo;自定义字体堆栈&rdquo;选项卡的&ldquo;可用字体&rdquo;列表中选择（字体），双击鼠标或单击添加按钮，将其添加到&ldquo;选择的字体&rdquo;列表中。
+                    </p>
+                    <p>&#9315;单击&rdquo;完成&rdquo;按钮。</p>
+                    <p>创建新的CSS文件</p>
+                    <p>①按 Shift+F11
+                        打开&ldquo;CSS设计器&rdquo;面板，在&ldquo;源&rdquo;窗口中单击&ldquo;添加CSS源&rdquo;按钮，在弹出的快捷菜单中选择&ldquo;创建新的CSS文件&rdquo;，打开&ldquo;创建新的CSS文件&rdquo;对话框。
+                    </p>
+                    <p>②单击&ldquo;文件/URL&rdquo;右侧的&ldquo;浏览&rdquo;按钮，打开&ldquo;将样式表文件另存为&rdquo;对话框。选择样式表文件的保存位置（文件夹），在文件名文本框中输入（文件名），单击&ldquo;保存&rdquo;按钮，返回&ldquo;创建新的CSS文件&rdquo;对话框，单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>③在&ldquo;选择器&rdquo;面板单击&ldquo;添加选择器&rdquo;按钮，在文本框中输入（样式名称），在属性面板将（属性）设置为（参数）。</p>
+                    <p>&#9315;在&ldquo;设计视图&rdquo;选择（要应用样式的元素），在属性面板&ldquo;类/目标规则&rdquo;下拉列表中选择（样式表名称）。</p>
+                    <p>附加现有的CSS文件</p>
+                    <p>①按 Shift+F11
+                        打开&ldquo;CSS设计器&rdquo;面板，在&ldquo;源&rdquo;窗口中单击&ldquo;添加CSS源&rdquo;按钮，在弹出的快捷菜单中选择&ldquo;附加现有的CSS文件&rdquo;，打开&ldquo;使用现有的CSS文件&rdquo;对话框。
+                    </p>
+                    <p>②单击&ldquo;文件/URL&rdquo;右侧的&ldquo;浏览&rdquo;按钮，打开&ldquo;选择样式表文件&rdquo;对话框。选择（文件夹下的样式表文件），返回&ldquo;使用现有的CSS文件&rdquo;对话框，单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>③在&ldquo;设计视图&rdquo;选择（要应用样式的元素），在属性面板&ldquo;类/目标规则&rdquo;下拉列表中选择（样式表名称）。</p>
+                    <p>插入鼠标经过图像</p>
+                    <p>①将光标定位到要插入变换图像的位置。</p>
+                    <p>②选择菜单&ldquo;插入→HTML→鼠标经过图像&rdquo;命令，打开&ldquo;插入鼠标经过图像&rdquo;对话框。</p>
+                    <p>③单击&ldquo;原始图像&rdquo;后的&ldquo;浏览按钮&rdquo;，打开&ldquo;原始图像&rdquo;对话框，选择图片（文件夹/图片），单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>单击&ldquo;鼠标经过图像&rdquo;后的&ldquo;浏览按钮&rdquo;，打开&ldquo;鼠标经过图像&rdquo;对话框，选择图片（文件夹/图片），单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>&#9315;单击&ldquo;按下时，前往的URL&rdquo;后的&ldquo;浏览&rdquo;按钮，在打开&ldquo;单击时，转到URL&rdquo;对话框中选择（文件）。</p>
+                    <p>&#9316;返回&ldquo;插入鼠标经过图像&rdquo;对话框单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>Flash设置透明</p>
+                    <p>①将光标定位到要插入动画的位置。</p>
+                    <p>②选择菜单&ldquo;插入→HTML→Flash SWF&rdquo;命令，打开&ldquo;选择 SWF&rdquo;对话框。</p>
+                    <p>③选择（文件夹）中的（flash文件名），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>&#9315;在&ldquo;设计视图&rdquo;选择flash占位符，在属性面板将&ldquo;Wmode&rdquo;设置为&ldquo;透明&rdquo;。</p>
+                    <p>背景音乐</p>
+                    <p>①将光标定位到要插入音频文件的位置。</p>
+                    <p>②选择菜单&ldquo;插入→HTML→插件&rdquo;命令，在打开的&ldquo;选择文件&rdquo;对话框中选择（文件夹）下的（音频文件名）。</p>
+                    <p>③在&ldquo;设计视图&rdquo;选择音频插件占位符，在属性面板中单击&ldquo;参数&rdquo;按钮，打开&ldquo;参数&rdquo;对话框，在&ldquo;参数&rdquo;框中输入&ldquo;hidden&rdquo;，并设定值为&ldquo;true&rdquo;（或直接在属性面板中将其宽度和高度的值设为0），单击加号按钮
+                        ，在新出现的行中输入&ldquo;autostart&rdquo;，并设定值为&ldquo;true&rdquo;，单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>链接路径</p>
+                    <p>（1）绝对路径:绝对路径是指链接目标对象的完整路径。当要链接到其他网站中的文件时，或者说是建立外部链接时，必须使用绝对路径，即完整的URL。</p>
+                    <p>（2）相对路径:相对路径是以当前文件所在位置为起点，到被链接文件经由的路径。当要链接到同一站点文件夹中的文件时，或者说是建立内部链接时，一般使用相对路径。</p>
+                    <p>①若链接到同一目录下的文件，则只需输入要链接文件的名称。</p>
+                    <p>②若链接到下一级目录下的文件，则先输入目录名，然后加&ldquo;/&rdquo;，再输入文件名。</p>
+                    <p>③若链接到上一级目录下的文件，则先输入&ldquo;../&rdquo;，再输入文件名。</p>
+                    <p>（3）根路径:根路径是从站点的根文件夹到文档的路径，如果根目录要写盘符，就在盘符后使用&ldquo;|&rdquo;。</p>
+                    <p>超链接</p>
+                    <p>（1）文本链接</p>
+                    <p>在&ldquo;文档&rdquo;窗口选择要创建超链接的文本，在&ldquo;属性面板&rdquo;中单击&ldquo;链接&rdquo;文本框右侧的文件夹图标，在打开的对话框中选择（文件）。
+                    </p>
+                    <p>①在&ldquo;文档&rdquo;窗口将鼠标光标定位到要创建链接的位置。</p>
+                    <p>②选择菜单&ldquo;插入→Hyperlink&rdquo;，打开&ldquo;Hyperlink&rdquo;对话框，在&ldquo;文本&rdquo;后的文本框中输入（链接文本）。</p>
+                    <p>③单击&ldquo;链接&rdquo;文本框右侧的文件夹图标，在打开的对话框中选择（文件）。</p>
+                    <p>&#9315;单击&ldquo;目标&rdquo;后的列表，在列表中选择（打开方式）。</p>
+                    <p>&#9316;单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>（2）图像链接</p>
+                    <p>以整个图像为对象建立超链接。</p>
+                    <p>在&ldquo;文档&rdquo;窗口选择要创建超链接的图片，在&ldquo;属性面板&rdquo;中单击&ldquo;链接&rdquo;文本框右侧的文件夹图标，在打开的对话框中选择（文件）。
+                    </p>
+                    <p>为图像的不同区域分别创建超链接。</p>
+                    <p>①在&ldquo;文档&rdquo;窗口中选中要创建超链接的图像。</p>
+                    <p>②在属性面板上选择热点工具，在图像上创建相应形状的热点。</p>
+                    <p>③利用&ldquo;指针热点工具&rdquo; 选择图像热点。</p>
+                    <p>&#9315;在&ldquo;热点&rdquo;属性面板中单击&ldquo;链接&rdquo;文本框右侧的文件夹图标，在打开的对话框中选择（文件）。</p>
+                    <p>（3）下载链接（同文本链接，只是exe、zip和rar等非网页类型文件，浏览器无法直接打开，会提示下载）</p>
+                    <p>（4）电子邮件链接</p>
+                    <p>利用菜单命令创建</p>
+                    <p>①在&ldquo;文档&rdquo;窗口中将光标定位到要创建邮件链接的位置。 </p>
+                    <p>②选择菜单&ldquo;插入→HTML→电子邮件链接&rdquo;命令，打开的&ldquo;电子邮件链接&rdquo;对话框，在&ldquo;文本&rdquo;后的文本框中输入（链接文本），在&ldquo;电子邮件&rdquo;后的文本框中输入（电子邮件地址）。
+                    </p>
+                    <p>③单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>利用属性面板创建</p>
+                    <p>在&ldquo;文档&rdquo;窗口中选择要创建电子邮件链接的文本或图像，在属性面板的&ldquo;链接&rdquo;文本框中输入mailto:（电子邮件地址）。</p>
+                    <p>（5）空连接</p>
+                    <p>①在&ldquo;文档&rdquo;窗口中选择要创建空链接的文本或图像。</p>
+                    <p>②在属性面板的&ldquo;链接&rdquo;文本框中输入&ldquo;javascript: ;&rdquo;或&ldquo; # &rdquo;。</p>
+                    <p>提示：使用#创建空链接，在一些浏览器中会出现返回网页顶端的效果，如果不想返回网页顶端，只想附加行为或动作，则建议使用&ldquo;javascript：；&rdquo;创建空链接。</p>
+                    <p>（6）脚本链接</p>
+                    <p>①在&ldquo;文档&rdquo;窗口中选择要创建脚本链接的文本或图像。</p>
+                    <p>②在属性面板的&ldquo;链接&rdquo;文本框中输入&ldquo;javascript:&rdquo;，后跟JavaScript代码或函数（在冒号与代码之间不能键入空格）。</p>
+                    <p>javascript:alert(&lsquo;弹出的信息&rsquo;)</p>
+                    <p>javascript:window.close()</p>
+                    <p>行为</p>
+                    <p>①按Shift + F4打开行为面板，选择要创建行为的对象。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（动作）。</p>
+                    <p>③打开（动作）对话框，设置相应参数，单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（1）弹出信息</p>
+                    <p>①按Shift + F4打开行为面板，在标签选择器中单击body。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（弹出信息）。</p>
+                    <p>③打开（弹出信息）对话框，在消息文本框中输入（信息），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件onLoad）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（2）交换图像</p>
+                    <p>①按Shift + F4打开行为面板，选择（图片）。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（交换图像）。</p>
+                    <p>③打开（交换图像）对话框，单击&ldquo;设置原始档为&rdquo;后的&ldquo;浏览&rdquo;按钮，打开&ldquo;选择图像源文件&rdquo;对话框，选择（图片），勾选鼠标滑开时恢复图像，单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将&ldquo;交换图像&rdquo;和&ldquo;恢复交换图像&rdquo;分别设置为&ldquo;onMouseOver&rdquo;和&ldquo;onMouseOut&rdquo;。
+                    </p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（3）打开浏览器窗口</p>
+                    <p>①按Shift + F4打开行为面板，选择（要创建行为的对象）。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（打开浏览器窗口）。</p>
+                    <p>③打开（打开浏览器窗口）对话框，单击&ldquo;要显示的URL&rdquo;后的&ldquo;浏览&rdquo;按钮，打开&ldquo;选择文件&rdquo;对话框，选择（文件），将&ldquo;窗口宽度&rdquo;和&ldquo;窗口高度&rdquo;分别设置为（***）和（***），单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（4）改变属性</p>
+                    <p>①按Shift + F4打开行为面板，选择（要创建行为的对象）。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（改变属性）。</p>
+                    <p>③打开（改变属性）对话框，在&ldquo;属性&rdquo;后的列表中选择（属性），在&ldquo;新的值&rdquo;后输入（参数），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件onClick）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（5）显示隐藏元素</p>
+                    <p>①按Shift + F4打开行为面板，选择（要创建行为的对象）。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（显示-隐藏元素）。</p>
+                    <p>③打开（显示-隐藏元素）对话框，设置为（显示、隐藏和默认），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>（6）预先载入图像</p>
+                    <p>①按Shift + F4打开行为面板，在标签选择器中单击body。</p>
+                    <p>②单击&ldquo;添加行为&rdquo;按钮，在快捷菜单中选择（预先载入图像）。</p>
+                    <p>③打开（预先载入图像）对话框，单击&ldquo;图像源文件&rdquo;后的&ldquo;浏览&rdquo;按钮，打开&ldquo;选择图像源文件&rdquo;对话框，选择（图像），单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>&#9315;单击&ldquo;显示设置事件&rdquo;按钮，将事件设置为（事件onLoad）。</p>
+                    <p>&#9316;按F12保存并预览。</p>
+                    <p>模板</p>
+                    <p>（1）另存模板</p>
+                    <p>选择&ldquo;文件→另存为模板&rdquo;命令，打开&ldquo;另存模板&rdquo;对话框，在&ldquo;站点&rdquo;框中选择（站点名称），在&ldquo;另存为&rdquo;框中输入（模板名称），单击&ldquo;保存&rdquo;按钮。
+                    </p>
+                    <p>（2）插入可编辑区域</p>
+                    <p>①在模板文档中，选择要定义为可编辑区域的内容，或将鼠标光标定位到要插入可编辑区域的位置。</p>
+                    <p>②选择菜单&ldquo;插入→模板→可编辑区域&rdquo;命令，打开&ldquo;新建可编辑区域&rdquo;对话框。</p>
+                    <p>③在对话框&ldquo;名称&rdquo;后的文本框中输入（可编辑区域的名称），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>（3）应用模板到页</p>
+                    <p>①打开（网页），选择&ldquo;工具→模板→应用模板到页&rdquo;，弹出&ldquo;选择模板&rdquo;对话框。</p>
+                    <p>②在&ldquo;站点&rdquo;下拉列表中选择（站点名称），在&ldquo;模板&rdquo;列表中选择（模板名称），单击&ldquo;选定&rdquo;按钮。</p>
+                    <p>③弹出&ldquo;不一致的区域名称&rdquo;对话框，选择&ldquo;Document
+                        body&lt;未解析&gt;&rdquo;，在&ldquo;将内容移到新区域&rdquo;列表中选择（可编辑区域名称），单击&ldquo;确定&rdquo;按钮。</p>
+                    <p>（4）将网页从模板中分离</p>
+                    <p>打开要从模板分离的网页，选择&ldquo;工具→模板→从模板中分离&rdquo;命令。</p>
+                    <p>表单</p>
+                    <p>（1）表单中数据向服务器发送的方法及其含义(简答2022 高考原题)</p>
+                    <p>①默认：默认的发送方法。一般情况下，浏览器采用的是GET方法。</p>
+                    <p>②POST: 将发送的数据嵌入 HTTP 请求中，可以发送大量的数据，安全性比较高。</p>
+                    <p>③GET: 将发送的数据附加到 URL 地址中，只能够发送少量的数据。</p>
+                    <p>（2）检查表单</p>
+                    <p>&ldquo;检查表单&rdquo;可以检查文本域的内容，以确保用户输入有效的数据。若包含无效数据，则自动会给予提示，并要求用户重新填写，直到输入的数据有效时才会接收。</p>
+                    <p>（1）选择&ldquo;窗口→行为&rdquo;打开行为面板。</p>
+                    <p>（2）选择表单中的&ldquo;确定&rdquo;按钮，单击行为面板中的&ldquo;添加行为&rdquo;按钮
+                        ，在弹出菜单中选择&ldquo;检查表单&rdquo;命令，打开&ldquo;检查表单&rdquo;对话框。</p>
+                    <p>（3）在&ldquo;域&rdquo;列表中选择学生姓名对应的文本字段&ldquo;textfield2&rdquo;，勾选&ldquo;必需的&rdquo;复选框。</p>
+                    <p>（4）在&ldquo;域&rdquo;列表中选择学生成绩对应的文本字段&ldquo;textfield3&rdquo;，在&ldquo;可接受&rdquo;区域中勾选&ldquo;数字从…到…&rdquo;单选按钮，设置数字范围从0到100。
+                    </p>
+                    <p>（5）在&ldquo;域&rdquo;列表中选择电子邮箱对应的文本字段&ldquo;textfield4&rdquo;，在&ldquo;可接受&rdquo;区域中勾选&ldquo;电子邮件地址&rdquo;单选按钮，单击&ldquo;确定&rdquo;按钮。
+                    </p>
+                    <p>（6）按F12保存并预览网页时，如果提交表单时，学生姓名项为空则提示出错信息。单击&ldquo;确定&rdquo;重新输入正确的内容。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 返回按钮 -->
+        <div style="text-align: center;">
+            <a href="#" class="back-btn">返回首页</a>
+        </div>
+    </div>
+</body>
+
+</html>
